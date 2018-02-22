@@ -29,3 +29,5 @@ o=32
 temperature_c=`echo $m*$temperature_signal/$d - $b | bc`
 temperature_f=`echo $temperature_c*$g + $o | bc`
 echo $temperature_c C
+
+
