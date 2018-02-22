@@ -7,10 +7,10 @@ sleep 0.1
 # Get raw bytes
 msb=`i2cget -y 2 0x40`
 lsb=`i2cget -y 2 0x40`
-checksum=`i2cget -y 2 0x40`
+# checksum=`i2cget -y 2 0x40`
 # echo $msb, $lsb, $checksum
 
-# Convert msb & lsb
+# Convert msb & lsb to decimal
 msb=$(($msb&0xff))
 lsb=$(($lsb&0xff))
 # echo $msb, $lsb
@@ -29,5 +29,3 @@ o=32
 temperature_c=`echo $m*$temperature_signal/$d - $b | bc`
 temperature_f=`echo $temperature_c*$g + $o | bc`
 echo $temperature_c C
-
-
