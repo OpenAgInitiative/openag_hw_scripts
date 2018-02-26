@@ -1,3 +1,5 @@
+#!/bin/sh
+
 # Trigger temp measurement (no hold master)
 i2cset -y 2 0x40 0xf3
 
@@ -29,3 +31,4 @@ o=32
 temperature_c=`echo $m*$temperature_signal/$d - $b | bc`
 temperature_f=`echo $temperature_c*$g + $o | bc`
 echo $temperature_c C
+echo $temperature_f F
